@@ -8,7 +8,7 @@ st.set_page_config(page_title="Ciber-Sensei | CTF Companion", page_icon="🛡️
 with st.sidebar:
     st.title("🛡️ Ciber-Sensei")
     st.write("Tu aliado socrático para retos CTF.")
-    api_key = st.text_input("Ingresa tu Google Gemini API Key:", type="password")
+    api_key = st.text_input("Ingresa tu Google Gemini API Key:", type="password").strip()
     
     st.divider()
     app_mode = st.radio("Selecciona una herramienta:", 
@@ -25,7 +25,7 @@ if not api_key:
 # Configurar el SDK
 genai.configure(api_key=api_key)
 # Usaremos gemini-1.5-flash por su rapidez y excelente manejo de contexto
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('models/gemini-1.5-flash')
 
 # --- MÓDULO 1: MENTOR SOCRÁTICO ---
 if app_mode == "🧠 Mentor Socrático":
