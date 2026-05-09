@@ -25,7 +25,7 @@ if not api_key:
 # Configurar el SDK
 genai.configure(api_key=api_key)
 # Usaremos gemini-1.5-flash por su rapidez y excelente manejo de contexto
-model = genai.GenerativeModel('models/gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-2.0-flash')
 
 # --- MÓDULO 1: MENTOR SOCRÁTICO ---
 if app_mode == "🧠 Mentor Socrático":
